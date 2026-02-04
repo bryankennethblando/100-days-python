@@ -19,17 +19,23 @@ def player_pick():
     return f"{suits} card {card} value: {value}"
 
 def total_value(card_one, card_two, card_three):
-    first_card_value = int(card_one[-1])
-    second_card_value = int(card_two[-1])
+    first_card_value = int(card_one[2])
+    second_card_value = int(card_two[2])
     
-    if card_three == None:
+    if card_three is None:
         return first_card_value + second_card_value
     else: 
-        third_card_value = int(card_three[-1])
+        third_card_value = int(card_three[2])
         return first_card_value + second_card_value + third_card_value
 
 def who_wins(player1, player2):
-    if player1 > player2 and player1 <= 21:
-        return f"Computer Wins!"
+    if player2 > 21:
+        return "You went over 21. Computer Wins!"
+    elif player1 > 21:
+        return "Computer went over 21. You Win!"
+    elif player1 == player2:
+        return "It's a Draw!"
+    elif player2 > player1:
+        return "You Win!"
     else:
-        return f"You Win"
+        return "Computer Wins!"
