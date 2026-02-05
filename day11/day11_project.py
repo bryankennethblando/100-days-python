@@ -42,7 +42,8 @@ while continue_again == True:
         computer_cards_total = game.total_value(computer_card_one, computer_card_two, None)
         player_cards_total = game.total_value(player_card_one, player_card_two, player_card_three)
     
-    print(f"\n{(game.who_wins(computer_cards_total, player_cards_total))}")
+    winner = game.who_wins(computer_cards_total, player_cards_total)
+    print(f"\n{winner}")
         
     try_again = input("\nWant to make another process (yes/no)? ")
 
@@ -52,4 +53,3 @@ while continue_again == True:
     else:
         print("thank you for playing, come again!")
         continue_again = False
-        
