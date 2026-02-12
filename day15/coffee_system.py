@@ -70,6 +70,7 @@ def money_checked(total_received_coins, drink_name):
     else:
         change = round(total_received_coins - cost, 2)
         if change > 0:
+            profit += cost
             return True, f"Here is your ${change} change."
         
         profit += cost
@@ -96,7 +97,7 @@ def inspect_resources():
             break
 
         print(f"{key} : {amount}ml")
-        
+
     print(f"Money : ${profit}")
 
 def process_again(customer_input):
