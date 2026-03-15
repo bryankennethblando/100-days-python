@@ -17,5 +17,5 @@ for i in range(len(sample_data)):
     calculation = np.array(sample_data[i])
     print(f"{i} mean: {np.round(np.mean(calculation), 2)}")
     print(f"{i} median: {np.median(calculation)}")
-    print(f"{i} mode: {np.max(calculation) - np.min(calculation)}")
+    print(f"{i} range: {np.max(calculation) - np.min(calculation)}")
     print(" ")
